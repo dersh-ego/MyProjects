@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-VideosList videosListFromJson(String str) =>
+VideosList videosListFromJson(String str) => //json в String??? зачем эти методы здесь? Почему они в класс не собраны? Почему столько классов в одном файле? Они все нужны?
     VideosList.fromJson(json.decode(str));
 
 String videosListToJson(VideosList data) => json.encode(data.toJson());
