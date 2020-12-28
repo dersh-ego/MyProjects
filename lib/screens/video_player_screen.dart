@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class VideoPlayerScreen extends StatefulWidget {
+class VideoPlayerScreen extends StatefulWidget { //Зачем здесь Stateful Widget? Я не увидел изменения состояния в зависимости от State.
   VideoPlayerScreen({this.videoItem});
   final VideoItem videoItem;
 
