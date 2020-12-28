@@ -76,16 +76,16 @@ class _HomeState extends State<Home> {
                   }
                   if (state is VideosFailure) {
                     return Center(
-                      child: Text('Error'),
+                      child: Text('Error'), //нужно вывести текст ошибки, которая пришла с бэка
                     );
                   }
-                  if (state is VideosSuccess) {
+                  if (state is VideosSuccess) { //Если записи загрузились, но их 0, то нужно написать, что записей нет, а не показывать крутилку
                     if (state.videos.length == 0) {
                       return Center(
                         child: CircularProgressIndicator(),
                       );
                     }
-                    if (state.videos.length < 20) {
+                    if (state.videos.length < 20) { //а что будет, если в списке на бэке меньше 20 записей в принципе? Будет бесконечная загрузка?
                       videosBloc.add(VideosFetched());
                     }
                     return Container(
